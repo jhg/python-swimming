@@ -1,0 +1,25 @@
+===========================================================================
+                             Python swimming
+===========================================================================
+
+Python uses swimming as version control system Git repository and you
+ can get from:
+
+    git://github.com/jhg/python-swimming.git
+
+The organization will continue the benevolent dictator model, being the
+ repository before we will consider the officer, principal, and maintained
+ by Jesus Hernandez Gormaz <jhg.jesus@gmail.com>.
+
+There are two major branches, the master branch and a development branch.
+ The development branch is where the changes will be added (you can have
+ your private branch to you and then make organziarte merge in development)
+ in that branch all those involved in Python swimming hacking publish your
+ changes and will obtain those of other. The master branch only receives
+ changes from the development branch when reaching a certain level of
+ stability in development.
+
+Whenever the master branch has a level of stability and functionality
+ (or error correction) is labeled appropriate a new version. Changes to
+ master branch merge only in the official repository, principal, and
+ similarly will be made to labeling.
