@@ -1,4 +1,5 @@
 #!/usr/bin/python
+#-*- coding: UTF-8 -*-
 
 ##########################################################################
 ## Python script to convert the python scripts to bytecode.             ##
