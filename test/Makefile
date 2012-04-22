@@ -22,25 +22,33 @@ DESTDIR=.
 
 INCLUDES=-I$(PYTHONAPI) -I.$(NPAPI)
 
-TESTS=embedded basicplugin embedded_bytecode
+TESTS=basicplugin embedded embedded_bytecode pure_embedding
 
 ## Automatic tests ##
 
-all: $(TESTS)
+all: pre_tests $(TESTS)
 	./embedded.bin
 	./embedded_bytecode.bin
-	echo [OK] Automatic tests	
+	echo Finish automatic tests
+
+## Actions before the tests ##
+
+pre_tests:
+	echo Start tests:
 
 ## Tests ##
-
-embedded: embedded.bin
-	echo [OK] Compiled embedded
 
 basicplugin: basicplugin.so
 	echo [OK] Compiled basic plugin
 
+embedded: embedded.bin
+	echo [OK] Compiled embedded
+
 embedded_bytecode: embedded_bytecode.bin embedded_bytecode.pyc
 	echo [OK] Compiled embedded bytecode
+
+pure_embedding: pure_embedding.bin
+	echo [OK] Compiled pure embedding
 
 ## Rules ##
 
@@ -63,11 +71,15 @@ embedded_bytecode: embedded_bytecode.bin embedded_bytecode.pyc
 
 ## Other ##
 
-.PHONY: clean all $(TESTS)
+.PHONY: clean testclean all $(TESTS) pre_tests
 
 .SILENT:
 
 clean:
 	$(RM) -f *.o *~ \#*
 	cd $(SRCDIR) && $(RM) -f *.o *~ \#*
+
+testclean:
+	$(RM) -f *.bin *.pyc *.so *.py
+	echo Delete tests
 
