@@ -13,9 +13,12 @@ main(int argc, char *argv[])
         return 1;
     }
 
+    printf("     PWD:        %s\n", getenv("PWD"));
+    printf("     Assign value to PYTHONPATH\n");
+    setenv("PYTHONPATH", strcat(getenv("PWD"), "/test/src"), 1);
+    printf("     PYTHONPATH: %s\n", getenv("PYTHONPATH"));
     Py_Initialize();
     PyRun_SimpleString("import sys\n");
-    PyRun_SimpleString("sys.path.append('./src')\n");
     pName = PyString_FromString(argv[1]);
     /* Error checking of pName left out */
 
