@@ -2,8 +2,15 @@
                              Python swimming
 ===========================================================================
 
-Python uses swimming as version control system Git repository and you
- can get from:
+Python swimming is a pluging of Python for web browsers. This plugin allows
+ you to run a Python program as an object embedded in an HTML document with
+ some restrictions for safety and added functionality (accessible like a
+ Python module).
+
+Organization
+============
+Python swimming uses as version control system Git and you can get repository
+ from:
 
     git://github.com/jhg/python-swimming.git
 
@@ -23,3 +30,29 @@ Whenever the master branch has a level of stability and functionality
  (or error correction) is labeled appropriate a new version. Changes to
  master branch merge only in the official repository, principal, and
  similarly will be made to labeling.
+
+
+Tests
+=====
+In the root directory of Python swimming can run:
+
+    make test
+
+Which compile the tests prepared (with the same options that compiles Python
+ swimming) and execute the tests can run automatically. In the test directory
+ find all the compiled tests. To clean the tests directory simply run:
+
+    make testclean
+
+These tests help to maintain the integrity and operation of code during
+ development. If you make changes and modifications fail their tests are
+ flawed. Before you can make changes, and it is advisable to create a test to
+ check the operation.
+
+Technical details
+=====
+The plugin uses as a way to extend the capabilities of the browser interface
+ NPAPI (Netscape Plugin API). Use GDK and GTK libraries for the operation of
+ the plugin. It also has embedded Python libraries to interpret all code
+ embedded Python interpreter with and extend the C API of Python.
+
