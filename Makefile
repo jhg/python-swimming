@@ -16,7 +16,6 @@
 ##########################################################################
 
 ## General configuration (plugin and tests) ##
-
 export VPYTHON=2.7
 export VGTK=2.0
 export CC=gcc
@@ -28,29 +27,25 @@ export GFLAGS=`pkg-config --cflags gtk+-$(VGTK)`
 export RM=rm
 
 ## Specified configuration ##
-
 SRCDIR=./src
 DESTDIR=.
 
 INCLUDES=-I$(PYTHONAPI) -I$(NPAPI)
 
 ## Plugin ##
-
 all: pythonswimming.so
 
 pythonswimming.so: main.so
 	mv $^ $@
 
 ## Tests ##
-
 test:
 	$(MAKE) -C ./test/
 
 testclean:
-	cd ./test && $(RM) -f *.bin *.pyc *.so *.py
+	$(MAKE) -C ./test/ testclean
 
 ## Rules ##
-
 %.o: $(SRCDIR)/%.c
 	$(CC) $(GFLAGS) $(CFLAGS) $(INCLUDES) -c $^ -o $@
 
@@ -61,7 +56,6 @@ testclean:
 	../src/generate_bytecode.py $^
 
 ## Other ##
-
 .PHONY: clean all test testclean
 
 .SILENT:
