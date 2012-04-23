@@ -23,19 +23,21 @@ INCLUDES=-I$(PYTHONAPI) -I.$(NPAPI)
 
 TESTS=basicplugin embedded embedded_bytecode pure_embedding
 
-FDATE=date +%X
+FDATE=date +%X:%N
 
-## Automatic tests ##
+## Automatic tests (finish) ##
 all: pre_tests $(TESTS)
-	echo [`$(FDATE)`] Start automatic tests:
+	echo [`$(FDATE)`] \* Start automatic tests
 	./embedded.bin
 	echo [`$(FDATE)`]
 	./embedded_bytecode.bin
-	echo [`$(FDATE)`] Finish tests.
+	echo [`$(FDATE)`]
+	./pure_embedding.bin pure_embedding test 16 3
+	echo [`$(FDATE)`] \* Finish tests
 
 ## Actions before the tests ##
 pre_tests:
-	echo [`$(FDATE)`] Start tests:
+	echo [`$(FDATE)`] \* Start tests
 
 ## Tests ##
 basicplugin: basicplugin.so
@@ -79,5 +81,6 @@ clean:
 
 testclean:
 	$(RM) -f *.bin *.pyc *.so *.py
+	cd $(SRCDIR) && $(RM) -f *.pyc
 	echo Delete tests
 
