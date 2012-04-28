@@ -1,2 +1,24 @@
+================================================================================
+                               Python swimming
+================================================================================
+
+Python swimming is a project begin by Jesús Hernández Gormaz for created a
+ plugin of Python for web browser. If you hacking in Python swimming write your
+ name and email in this list with format Name <username@server.domain> in one
+ line, if you have got more emails write in next line only one email in one line
+ without name only <username@server.domain> and align all character "<".
+Example:
+
+    Name <user1@server.net>
+    Name2 <user2@server.net>
+    ...
+    Name30 <user@server.net>
+           <user2@server2.net>
+    Name31 <user31@server.net>
+    ...
+
+
+Authors
+=======
 Jesús Hernández Gormaz <jhg.jesus@gmail.com>
 

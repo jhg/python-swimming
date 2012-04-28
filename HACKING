@@ -1,6 +1,6 @@
-===========================================================================
-                             Python swimming
-===========================================================================
+================================================================================
+                               Python swimming
+================================================================================
 
 Python swimming is a pluging of Python for web browsers. This plugin allows
  you to run a Python program as an object embedded in an HTML document with
@@ -49,8 +49,9 @@ These tests help to maintain the integrity and operation of code during
  flawed. Before you can make changes, and it is advisable to create a test to
  check the operation.
 
+
 Technical details
-=====
+=================
 The plugin uses as a way to extend the capabilities of the browser interface
  NPAPI (Netscape Plugin API). Use GDK and GTK libraries for the operation of
  the plugin. It also has embedded Python libraries to interpret all code
