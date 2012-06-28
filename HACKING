@@ -23,3 +23,9 @@ Whenever the master branch has a level of stability and functionality
  (or error correction) is labeled appropriate a new version. Changes to
  master branch merge only in the official repository, principal, and
  similarly will be made to labeling.
+
+
+Dependences
+===========
+For compile need:
+ - gtk+-2.0
