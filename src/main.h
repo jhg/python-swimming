@@ -39,4 +39,10 @@ void    NPP_URLNotify(NPP instance, const char* URL, NPReason reason, void* noti
 NPError NPP_GetValue(NPP instance, NPPVariable variable, void *value);
 NPError NPP_SetValue(NPP instance, NPNVariable variable, void *value);
 
+#define MIME_TYPE_DESCRIPTION "application/basic-plugin:bsp:Basic Example Plug-in"
+const char* NP_GetMIMEDescription(void)
+{
+  return(MIME_TYPES_DESCRIPTION);
+}
+
 #endif // MAIN_H
